@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+  string name;
+  int age;
+  string country;
+  string confirm;
+
+  cout << "Hello World!" << endl;
+  cout << "What is your name? ";
+  getline(cin, name);
+  cout << "Nice to meet you " << name << "." << endl << endl;
+  cout << "Where are you from? ";
+  getline(cin, country);
+
+  if(country == "US" || country == "USA" || country == "United States"){
+      cout << "You are from the " << country << "." << endl << endl;
+  }
+  else if(country == "The US" || country == "The United States") {
+      cout << "You are from " << country << "." << endl << endl;
+  }
+  else {
+    cout << "You are from " << country << "." << endl << endl;
+  }
+
+  cout << "How old are you? ";
+  cin >> age;
+  cout << "You are " << age << " years old." << endl; 
+
+  cout << "Just to confirm, you're name is " << name << ", you're from " << country << ", and you are " << age << "." << endl << endl;  
+
+  cout << "Is that correct? Type in Yes or No: ";
+  cin >> confirm;
+  cout << endl;
+
+  if (confirm == "Yes" || confirm == "yes" || confirm == "y" || confirm == "Y"){
+      cout << "Awesome!" << endl;
+  }
+  else {
+      cout << "Oh, I'm sorry. I'll do better next time." << endl;
+  }
+
+  return 0;
+}
