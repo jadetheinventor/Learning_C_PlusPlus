@@ -1,0 +1,101 @@
+#include <iostream>
+#include <string>
+
+int main(){
+    
+    int product, quotient, sum, difference, num1, num2, whatsLeftOver;
+    std::string response, operation;
+    char symbol;
+    bool validOperation = false;
+    
+    std::cout << "Welcome to my Calculator Program For Integers" << std::endl << std::endl;
+    
+    do {
+        validOperation = false;
+        std::cout << "Type in an integer: ";
+        std::cin >> num1;
+        std::cout << std::endl;
+        while (!validOperation) {
+        std::cout << "What would you like to do? ";
+        std::cin >> operation;
+
+        if (operation == "+" || operation == "add" || operation == "addition" || operation == "Addition" || operation == "Add" || operation == "plus" || operation == "Plus") {
+        validOperation = true;
+        }
+        else if (operation == "-" || operation == "minus" || operation == "Minus" || operation == "subtract" || operation == "Subtract" || operation == "subtraction" || operation == "Subtraction") {
+        validOperation = true;
+        }
+        else if (operation == "multiply" || operation =="Multiply" || operation == "multiplication" || operation == "Multiplication" || operation == "*") {
+        validOperation = true;
+        }
+        else if (operation == "/" || operation == "divide"|| operation == "slash" || operation == "Divide" || operation == "division" || operation == "Division") {
+        validOperation = true;
+        }
+        else {
+        std::cout << "Invalid operation. Please try again.\n";
+        }
+}
+    
+    if(operation == "+" || operation == "add" || operation == "addition" || operation == "Addition" || operation == "Add" || operation == "plus" || operation == "Plus"){
+        symbol = '+';
+        std::cout << num1 << " " << symbol << " ";
+        std::cin >> num2;
+        std::cout << std::endl << std::endl;
+        sum = num1 + num2;
+        std::cout << num1 << " " << symbol << " " << num2 << " " << "=" << " " << sum << std::endl;  
+    }
+    else if(operation == "-" || operation == "minus" || operation == "Minus" || operation == "subtract" || operation == "Subtract" || operation == "subtraction" || operation == "Subtraction"){
+        symbol = '-';
+        std::cout << num1 << " " << symbol << " ";
+        std::cin >> num2;
+        std::cout << std::endl << std::endl;
+        difference = num1 - num2;
+        std::cout << num1 << " " << symbol << " " << num2 << " " << "=" << " " << difference << std::endl; 
+    }
+    else if(operation == "multiply" || operation =="Multiply" || operation == "multiplication" || operation == "Multiplication" || operation == "*"){
+        symbol = '*';
+        std::cout << num1 << " " << symbol << " ";
+        std::cin >> num2;
+        std::cout << std::endl << std::endl;
+        product = num1 * num2;
+        std::cout << num1 << " " << symbol << " " << num2 << " " << "=" << " " << product << std::endl; 
+    }
+    else if(operation == "/" || operation == "divide"|| operation == "slash" || operation == "Divide" || operation == "division" || operation == "Division"){
+        symbol = '/';
+        
+        std::cout << num1 << " " << symbol << " ";
+        std::cin >> num2;
+        
+        std::cout << std::endl;
+        
+        if(num2 == 0){
+        std::cout << "Undefined" << std::endl;
+        }
+      else {
+        quotient = num1 / num2;
+        whatsLeftOver = num1 % num2;
+      
+        if(num1 % num2 == 0){
+            std::cout << num1 << " " << symbol << " "
+                      << num2 << " = " << quotient << std::endl;
+        }
+          else{
+            std::cout << num1 << " " << symbol << " "
+                      << num2 << " = " << quotient << std::endl;
+
+            std::cout << "The remainder is: "
+                      << whatsLeftOver << std::endl;
+          }
+      }
+}
+        std::cout << "Would you like to start over? Type Yes or No: ";
+        std::cin >> response;
+
+    }   while(response == "Yes" || response == "yes" || response == "y" || response == "Y");
+    
+    return 0;
+}
+
+
+
+
